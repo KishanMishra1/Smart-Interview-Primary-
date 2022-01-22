@@ -14,15 +14,15 @@ class Solution :
     def sumofpairs2(self,arr,k): #0(NLOGN+N)
         arr.sort() #timsort in python uses merge sort so time complexity is nlogn
         n=len(arr)
-        sum=0
+        diff=0
         bool=False
         l=0
         h=n-1
         while(l<h):
             diff=arr[l]-arr[h]
-            if sum>k:
+            if diff>k:
                 h-=1
-            elif sum<k:
+            elif diff<k:
                 l+=1
             else:
                 bool=True
